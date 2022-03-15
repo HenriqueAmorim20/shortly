@@ -36,6 +36,7 @@ export default {
 
   /* ### Neutral */
 
+  --White: hsl(0, 0%, 100%);
   --Gray: hsl(0, 0%, 75%);
   --GrayishViolet: hsl(257, 7%, 63%);
   --VeryDarkBlue: hsl(255, 11%, 22%);
@@ -45,5 +46,6 @@ export default {
 .app {
   background-color: #fff !important;
   color: var(--DarkViolet) !important;
+  font-family: "Poppins";
 }
 </style>
