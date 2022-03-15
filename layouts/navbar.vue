@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      menu: [],
+      menu: ["features", "pricing", "resources", "login", "sign up",],
       width: null,
     };
   },
