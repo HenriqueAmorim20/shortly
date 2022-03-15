@@ -1,19 +1,28 @@
 <template>
   <v-app class="app">
+    <Navbar />
     <v-main>
       <Nuxt />
     </v-main>
+    <Footer />
   </v-app>
 </template>
 
 <script>
+import Navbar from "./navbar.vue";
+import Footer from "./footer.vue";
+
 export default {
   name: "DefaultLayout",
+  components: {
+    Navbar,
+    Footer,
+  },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 
 :root {
   /* ### Primary */
