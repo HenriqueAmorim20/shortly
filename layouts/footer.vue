@@ -77,7 +77,7 @@ export default {
 .footer {
   background-color: var(--VeryDarkViolet);
   display: grid;
-  grid-template-columns: 0.6fr 1.05fr 0.5fr;
+  grid-template-columns: 0.6fr 1.1fr 0.5fr;
   gap: 1.5rem;
   padding: 5% 10%;
 }
@@ -85,6 +85,7 @@ export default {
 .menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .logo-img {
@@ -94,6 +95,7 @@ export default {
 .menu-list {
   list-style: none;
   font-size: 0.9rem;
+  padding: 0;
 }
 
 .menu-list-title {
@@ -129,10 +131,15 @@ export default {
   color: var(--Cyan);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .footer {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -146,11 +153,7 @@ export default {
   }
 
   .menu-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 0;
   }
 
   .logo {
