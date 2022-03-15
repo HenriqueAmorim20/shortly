@@ -45,7 +45,6 @@ export default {
 
 .app {
   background-color: #fff !important;
-  color: var(--DarkViolet) !important;
   font-family: "Poppins";
 }
 </style>
