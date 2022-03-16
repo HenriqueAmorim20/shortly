@@ -1,19 +1,19 @@
 <template>
   <div class="main">
     <FirstSection />
-    <!-- <SecondSection /> -->
+    <SecondSection />
   </div>
 </template>
 
 <script>
 import FirstSection from "@/sections/first.vue";
-// import SecondSection from "@/sections/second.vue";
+import SecondSection from "@/sections/second.vue";
 
 export default {
   name: "IndexPage",
   components: {
     FirstSection,
-    // SecondSection,
+    SecondSection,
   },
 };
 </script>
