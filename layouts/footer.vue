@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <footer class="footer">
       <section class="logo">
         <v-img class="logo-img" :src="require('@/static/logo.svg')"></v-img>
@@ -74,9 +74,14 @@ export default {
 };
 </script>
 <style scoped>
-.footer {
+.main {
   background-color: var(--VeryDarkViolet);
+}
+.footer {
   display: grid;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
   grid-template-columns: 0.6fr 1.1fr 0.5fr;
   gap: 1.5rem;
   padding: 5% 10%;
