@@ -1,5 +1,9 @@
 <template>
-  <section class="second-section">
+  <section
+    class="second-section"
+    id="second-section"
+    :class="resultLink ? 'background-linear' : ''"
+  >
     <div class="shortener">
       <v-text-field
         light
@@ -10,7 +14,7 @@
         flat
         class="input"
         :class="error ? 'error' : ''"
-        @keyup="error = input.length < 0"
+        @keyup="error = !input && input.length < 0"
       ></v-text-field>
       <v-btn :loading="loading" class="section-btn" @click="shortenIt()"
         >shorten it!</v-btn
@@ -55,7 +59,6 @@ export default {
         this.error = false;
         this.showResult = true;
         this.resultLink = response.result.full_short_link;
-        console.log(response);
       } catch (error) {
         this.error = true;
       }
@@ -82,16 +85,38 @@ export default {
 </script>
 <style scoped>
 .second-section {
-  margin-top: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 10% 0;
+  background: linear-gradient(#ffffff 70%, #eff1f7 70%);
+}
+
+.background-linear {
+  background: linear-gradient(#ffffff 50%, #eff1f7 50%);
+}
+
+@media (max-width: 700px) {
+  .second-section {
+    padding: 1rem 5% 0;
+    background: linear-gradient(#ffffff 50%, #eff1f7 50%);
+  }
+
+  .background-linear {
+    background: linear-gradient(#ffffff 30%, #eff1f7 30%);
+  }
 }
 
 .shortener {
+  max-width: 1440px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--DarkViolet);
   background-image: url("@/static/bg-shorten-desktop.svg");
   background-size: cover;
+  background-position: center;
   border-radius: 0.7rem;
   padding: clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 3.5vw, 3.5rem);
 }
@@ -157,7 +182,7 @@ export default {
   background-color: #fff;
   border-radius: 0.25rem;
   padding: clamp(0.8rem, 2vw, 1.6rem) clamp(1.6rem, 3vw, 3.2rem);
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 .initial-link {

@@ -6,7 +6,7 @@
         Build your brand's recognition and get detailed insights on how your
         links are performing.
       </p>
-      <span class="content-btn">get started</span>
+      <span class="content-btn" @click="goTo()">get started</span>
     </div>
     <div class="side-img">
       <v-img
@@ -19,6 +19,13 @@
 <script>
 export default {
   name: "FirstSection",
+  methods: {
+    goTo() {
+      const element = document.getElementById("second-section");
+      const y = element?.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    },
+  },
 };
 </script>
 <style scoped>
@@ -27,11 +34,19 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin-top: 8vw;
+  padding: 0 10% 2rem;
+}
+
+@media (max-width: 700px) {
+  .first-section {
+    padding: 0 5%;
+  }
 }
 
 .content,
 .side-img {
   width: 45%;
+  max-width: 770px;
 }
 
 .side-img .img {
@@ -40,7 +55,7 @@ export default {
 
 .content-title {
   color: var(--VeryDarkViolet);
-  font-size: clamp(2rem, 4.8vw, 4.8vw);
+  font-size: clamp(2rem, 4.5vw, 4rem);
   line-height: 110%;
 }
 
@@ -49,12 +64,12 @@ export default {
 }
 
 .content-info {
-  font-size: clamp(0.9rem, 1.4vw, 1.4vw);
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
   margin: 0.5rem 0 2.5rem !important;
 }
 
 .content-btn {
-  font-size: clamp(0.9rem, 1.4vw, 1.4vw);
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
   color: var(--White);
   background-color: var(--Cyan);
   padding: 0.7rem 2rem;
