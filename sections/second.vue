@@ -177,6 +177,8 @@ export default {
 }
 
 .result {
+  max-width: 1440px;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: #fff;
